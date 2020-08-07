@@ -2,3 +2,4 @@
 .env
 SlackBot.iml
 files/
+src/__pycache__/
