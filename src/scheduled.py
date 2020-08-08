@@ -6,7 +6,7 @@ import schedule
 from dotenv import load_dotenv
 from slack import WebClient
 
-import botCommon
+import BotCommon
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -18,7 +18,7 @@ if __name__ == "__main__":
     logging.debug("authorized slack client")
 
     # Sending text
-    schedule.every(5).seconds.do(lambda: botCommon.sendMessage(slack_client, "5s timer"))
+    schedule.every(5).seconds.do(lambda: BotCommon.sendMessage(slack_client, "5s timer"))
     # schedule.every().monday.at("13:15").do(lambda: sendMessage(slack_client, msg))
 
     logging.info("entering loop")

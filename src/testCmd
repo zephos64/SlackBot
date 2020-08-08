@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from slack import WebClient
 import random
 
-import botCommon
+import BotCommon
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -15,15 +15,17 @@ if __name__ == "__main__":
     slack_token = os.environ['SLACK_BOT_TOKEN']
 
     slack_client = WebClient(token=slack_token)
+    BotCommon.getConversationsList(slack_client)
     logging.debug("authorized slack client")
 
+
+
     # Sending text
-    msg="Hello world " + str(random.randint(1, 100))
-    resp = botCommon.sendMessage(slack_client, msg)
-    time.sleep(5)
-    msg="Updated message " + str(random.randint(1, 100))
-    botCommon.updateMessage(slack_client, msg,
-                            resp['ts'], resp['channel'])
+    #msg="Hello world " + str(random.randint(1, 100))
+    #resp = BotCommon.sendMessage(slack_client, msg)
+    #time.sleep(5)
+    #msg="Updated message " + str(random.randint(1, 100))
+    #BotCommon.updateMessage(slack_client, msg, resp['ts'])
 
     # Sending image
-    #botCommon.sendImg(slack_client, '../files/slime3.png')
+    #BotCommon.sendImg(slack_client, '../files/slime3.png')
