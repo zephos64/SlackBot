@@ -6,7 +6,7 @@ import schedule
 from dotenv import load_dotenv
 from slack import WebClient
 
-import BotCommon
+from python import BotCommon
 
 logging.basicConfig(level=logging.DEBUG)
 

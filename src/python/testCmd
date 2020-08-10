@@ -1,24 +1,27 @@
 import logging
 import os
-import time
 
 from dotenv import load_dotenv
 from slack import WebClient
-import random
 
-import BotCommon
+from slack.signature import SignatureVerifier
+
+from python import BotCommon
 
 logging.basicConfig(level=logging.DEBUG)
 
 if __name__ == "__main__":
     load_dotenv()
     slack_token = os.environ['SLACK_BOT_TOKEN']
+    SLACK_SIGNATURE = os.environ['SLACK_SIGNATURE']
 
     slack_client = WebClient(token=slack_token)
     BotCommon.getConversationsList(slack_client)
     logging.debug("authorized slack client")
+    verifier = SignatureVerifier(SLACK_SIGNATURE)
 
-
+    msg="Zephbot started up"
+    resp = BotCommon.sendMessage(slack_client, msg)
 
     # Sending text
     #msg="Hello world " + str(random.randint(1, 100))

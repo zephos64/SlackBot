@@ -4,7 +4,7 @@ import logging
 from slack import WebClient
 from slack.errors import SlackApiError
 
-import ChannelsSingleton
+from python import ChannelsSingleton
 
 logging.basicConfig(level=logging.DEBUG)
 channels = ChannelsSingleton.ChannelSingleton()
