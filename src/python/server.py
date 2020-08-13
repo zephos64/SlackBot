@@ -71,8 +71,6 @@ def dmImgLookupCmd():
     return make_response("", response.status_code)
 
 def asyncImageLookup(encoded_channel_id, text, ts):
-    time.sleep(3)
-
     # Look up the image
     msgLookup = ImageLookup(text)
     response = slack_client.chat_update(
