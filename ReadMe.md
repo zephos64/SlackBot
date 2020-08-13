@@ -8,11 +8,12 @@ This is a basic slack bot, I'll be adding features as I go!
 - Slash commands
     - /zecho - echo back a message
     - /zimglookup - Google search and image and return the first result
+- Slash command games
+    - /zflipcoin - Choose a coin face and see if you guessed correctly!
 
 ## ToDo
 - Set up games
-    - High low
-    - Sudoku
+    - AdLib
 - Timebox commands
     - Start timer/stop and see result
     - Notification after x time
